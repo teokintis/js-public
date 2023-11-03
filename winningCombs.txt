@@ -1,0 +1,10 @@
+const winningCombos = [
+  { combo: [1, 2, 3], targetClass: "winningLineHorizontal" },
+  { combo: [4, 5, 6], targetClass: "winningLineHorizontal" },
+  { combo: [7, 8, 9], targetClass: "winningLineHorizontal" },
+  { combo: [1, 4, 7], targetClass: "winningLineVertical" },
+  { combo: [2, 5, 8], targetClass: "winningLineVertical" },
+  { combo: [3, 6, 9], targetClass: "winningLineVertical" },
+  { combo: [1, 5, 9], targetClass: "winningLineHorizontal" },
+  { combo: [3, 5, 7], targetClass: "winningLineHorizontal" },
+];
