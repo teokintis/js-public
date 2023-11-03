@@ -1,0 +1,189 @@
+body {
+  font-family: cursive;
+}
+
+.container {
+  width: 700px;
+  margin: 50px auto;
+  border-radius: 8px;
+  border: 1px solid lightgray;
+  background-color: lightgray;
+  display: flex;
+  min-height: 300px;
+}
+
+.title {
+  text-align: center;
+}
+
+.player {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointsContainer {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+}
+.points1,
+.points2 {
+  font-size: 24px;
+}
+
+.playerBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameContainer {
+  background-color: #14bdac;
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: absolute;
+}
+
+.box {
+  width: 55px;
+  height: 55px;
+  border: 2px solid #0da192;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: #0d9b8d;
+}
+
+.box.selctionplayer1,
+.box.selctionplayer2 {
+  cursor: default;
+  pointer-events: none;
+}
+
+.box.selctionplayer1:hover,
+.box.selctionplayer2:hover {
+  background-color: none;
+}
+
+.box.selctionplayer1:after {
+  font-size: 30px;
+  color: #545454;
+  content: "X";
+}
+
+.box.selctionplayer2:after {
+  color: #f2ebd3;
+  font-size: 30px;
+  content: "O";
+}
+
+.blt {
+  border-left-color: transparent;
+}
+
+.brt {
+  border-right-color: transparent;
+}
+
+.btt {
+  border-top-color: transparent;
+}
+
+.bbt {
+  border-bottom-color: transparent;
+}
+
+.winningLineVertical {
+  position: absolute;
+  width: 3px;
+  height: 0px;
+  border: none;
+  top: 0px;
+  transition: height 0.3s ease-in-out;
+}
+
+.winningLineHorizontal {
+  position: absolute;
+  width: 0px;
+  border: none;
+  top: 0px;
+  transition: width 0.3s ease-in-out;
+  height: 3px;
+}
+
+.winningLineHorizontal.player1,
+.winningLineVertical.player1 {
+  background-color: #545454;
+}
+
+.winningLineHorizontal.player2,
+.winningLineVertical.player2 {
+  background-color: #f2ebd3;
+}
+
+.line123 {
+  width: 175px;
+  top: 29px;
+}
+.line456 {
+  width: 175px;
+  top: 87px;
+}
+.line789 {
+  width: 175px;
+  top: 146px;
+}
+
+.line147 {
+  height: 175px;
+  top: 0px;
+  left: 29px;
+}
+
+.line258 {
+  height: 175px;
+  top: 0px;
+  left: 87px;
+}
+
+.line369 {
+  height: 175px;
+  top: 0px;
+  left: 146px;
+}
+
+.line147 {
+  top: 0px;
+  left: 28px;
+}
+
+.line159 {
+  transform: rotate(45deg);
+  transform-origin: left;
+  width: 240px;
+}
+
+.line357 {
+  transform: rotate(-45deg) translate(-50px, -45px);
+  transform-origin: right;
+  width: 240px;
+}
