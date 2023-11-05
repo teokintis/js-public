@@ -130,13 +130,24 @@ body {
   height: 3px;
 }
 
+.winningLineReverseDiagonal {
+  position: absolute;
+  width: 0px;
+  border: none;
+  top: 175px;
+  transition: width 0.3s ease-in-out;
+  height: 3px;
+}
+
 .winningLineHorizontal.player1,
-.winningLineVertical.player1 {
+.winningLineVertical.player1,
+.winningLineReverseDiagonal.player1 {
   background-color: #545454;
 }
 
 .winningLineHorizontal.player2,
-.winningLineVertical.player2 {
+.winningLineVertical.player2,
+.winningLineReverseDiagonal.player2 {
   background-color: #f2ebd3;
 }
 
@@ -183,7 +194,7 @@ body {
 }
 
 .line357 {
-  transform: rotate(-45deg) translate(-50px, -45px);
-  transform-origin: right;
+  transform: rotate(-45deg);
+  transform-origin: left;
   width: 240px;
 }
