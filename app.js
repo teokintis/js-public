@@ -23,6 +23,7 @@ const playerSelections = {
 
 let loading = false;
 let nowPlaying = "";
+let playingFirst = "";
 const boxes = document.querySelectorAll(".box");
 const player1Points = document.querySelector(".points1");
 const player2Points = document.querySelector(".points2");
@@ -30,7 +31,7 @@ const player1Label = document.querySelector(".player1Label");
 const player2Label = document.querySelector(".player2Label");
 
 const newGame = () => {
-  switchPlayer();
+  togglePlayer();
   playerSelections.player1 = [];
   playerSelections.player2 = [];
   boxes.forEach((b) => {
@@ -41,6 +42,8 @@ const newGame = () => {
     "winningLineHorizontal";
   document.querySelector(".winningLineVertical").classList =
     "winningLineVertical";
+  document.querySelector(".winningLineReverseDiagonal").classList =
+    "winningLineReverseDiagonal";
 };
 
 const addBoxClass = (e) => {
@@ -64,6 +67,14 @@ const findWinner = (e) => {
 
 const switchPlayer = (e) => {
   nowPlaying = nowPlaying === "player1" ? "player2" : "player1";
+  player1Label.style.color = nowPlaying === "player1" ? "green" : "black";
+  player2Label.style.color = nowPlaying === "player2" ? "green" : "black";
+  loading = false;
+};
+
+const togglePlayer = (e) => {
+  playingFirst = playingFirst === "player1" ? "player2" : "player1";
+  nowPlaying = playingFirst;
   player1Label.style.color = nowPlaying === "player1" ? "green" : "black";
   player2Label.style.color = nowPlaying === "player2" ? "green" : "black";
   loading = false;
@@ -123,4 +134,4 @@ boxes.forEach((b) => b.addEventListener("click", select));
 // const game = document.querySelector(".game");
 // game.addEventListener("click", select);
 
-switchPlayer();
+togglePlayer();
