@@ -65,8 +65,12 @@ const findWinner = (e) => {
   );
 };
 
-const switchPlayer = (e) => {
-  nowPlaying = nowPlaying === "player1" ? "player2" : "player1";
+const switchPlayer = (player) => {
+  nowPlaying = player ?? (nowPlaying === "player1" ? "player2" : "player1");
+  updatePlayerUI();
+};
+
+const updatePlayerUI = () => {
   player1Label.style.color = nowPlaying === "player1" ? "green" : "black";
   player2Label.style.color = nowPlaying === "player2" ? "green" : "black";
   loading = false;
@@ -75,9 +79,7 @@ const switchPlayer = (e) => {
 const togglePlayer = (e) => {
   playingFirst = playingFirst === "player1" ? "player2" : "player1";
   nowPlaying = playingFirst;
-  player1Label.style.color = nowPlaying === "player1" ? "green" : "black";
-  player2Label.style.color = nowPlaying === "player2" ? "green" : "black";
-  loading = false;
+  updatePlayerUI();
 };
 
 const checkWinner = (winnerCombo) => {
